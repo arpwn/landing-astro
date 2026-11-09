@@ -14,3 +14,8 @@ Incluye metadatos de descripción, Open Graph, canonical, viewport, enlace para 
 - `npm run preview`
 
 Demo: https://landing-astro-bay.vercel.app/
+
+
+## Idiomas
+
+La interfaz admite español e inglés mediante el selector ES / EN. La preferencia se guarda en este navegador y también puede definirse al abrir `?lang=es` o `?lang=en`. Cambiar el idioma conserva los datos de los formularios y los filtros activos. Las etiquetas, validaciones y salidas generadas se adaptan al idioma; los textos libres escritos por el usuario se conservan.

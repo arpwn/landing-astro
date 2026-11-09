@@ -1,0 +1,5 @@
+---
+import { translate } from '../lib/translations';
+const { text } = Astro.props as { text: string };
+---
+<span data-language="es" lang="es">{translate(text,'es')}</span><span data-language="en" lang="en">{translate(text,'en')}</span>

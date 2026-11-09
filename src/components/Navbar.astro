@@ -1,1 +1,5 @@
-<header class="site-header"><nav class="wrap navigation" aria-label="Navegación principal"><a href="#inicio" class="brand"><span>◧</span>DevLaunch</a><div class="nav-links"><a href="#servicios">Qué hacemos</a><a href="#proceso">El proceso</a></div><a class="nav-cta" href="#brief">Hablemos de tu web <span>↗</span></a></nav></header>
+---
+
+import T from "./Localized.astro";
+---
+<header class="site-header"><nav class="wrap navigation" aria-label="Navegación principal" data-aria-key="Navegación principal"><a href="#inicio" class="brand"><span>◧</span>DevLaunch</a><div class="nav-links"><a href="#servicios"><T text="Qué hacemos"/></a><a href="#proceso"><T text="El proceso"/></a></div><div class="nav-actions"><button id="language-toggle" class="language-toggle" type="button" aria-label="Switch to English">EN</button><a class="nav-cta" href="#brief"><T text="Hablemos de tu web"/> <span>↗</span></a></div></nav></header>
