@@ -1,29 +1,8 @@
 ---
-import '../styles/global.css'
-import Navbar from '../components/Navbar.astro'
-const { title } = Astro.props
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+const { title } = Astro.props;
+const description = 'DevLaunch: concepto de estudio web para negocios. Explora el proceso y prepara un brief descargable para tu siguiente sitio.';
 ---
-
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>{title}</title>
-  </head>
-
-  <body class="bg-gradient-to-b from-white to-gray-100 text-gray-900 scroll-smooth">
-
-    <!-- Navbar fijo -->
-    <Navbar />
-
-    <!-- Contenido principal -->
-    <main class="max-w-4xl mx-auto p-10 pt-32">
-      <slot />
-    </main>
-
-    <!-- Footer -->
-    <footer class="text-center p-6 text-gray-500 dark:text-gray-400 mt-20">
-      © 2026 DevLaunch
-    </footer>
-
-  </body>
-</html>
+<!doctype html>
+<html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content={description}/><meta name="theme-color" content="#f7f6f2"/><title>{title}</title><link rel="canonical" href="https://landing-astro-bay.vercel.app/"/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><meta property="og:locale" content="es_MX"/><link rel="icon" type="image/svg+xml" href="/favicon.svg"/></head><body><a class="skip-link" href="#main">Saltar al contenido</a><Navbar/><main id="main"><slot/></main><footer class="site-footer wrap"><a class="brand" href="#inicio"><span>◧</span>DevLaunch</a><p>Concepto de estudio digital · Proyecto de portafolio de Armando Gtz.</p><a href="https://github.com/arpwn/landing-astro" target="_blank" rel="noreferrer">Ver código ↗</a></footer></body></html>

@@ -1,62 +1,24 @@
 ---
-import Layout from "../layouts/Layout.astro"
-import Hero from "../components/Hero.astro"
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+const services = [
+  { number:'01',name:'Una página que presenta.',type:'LANDING PAGE',description:'Tu oferta, sus beneficios y un camino directo al contacto. Para lanzar un servicio o dar a conocer una idea.',tags:['Mensaje principal','Diseño adaptable','Contacto'] },
+  { number:'02',name:'Un sitio que cuenta más.',type:'SITIO DE NEGOCIO',description:'Espacio para tus servicios, tu historia y las preguntas de tus clientes. Cada sección tiene un propósito.',tags:['Estructura de contenido','Servicios','Preguntas frecuentes'] },
+  { number:'03',name:'Trabajo que habla por ti.',type:'PORTAFOLIO',description:'Una selección de proyectos con el contexto que necesitan. Para profesionales y estudios que quieren mostrar su trabajo.',tags:['Selección de proyectos','Casos de trabajo','Perfil profesional'] },
+];
 ---
-
-<Layout title="DevLaunch - Lanza tu proyecto web">
-
-  <!-- Hero principal -->
-  <Hero />
-
-  <!-- Sección de Features -->
-  <section id="features" class="mt-24 text-center">
-
-    <h2 class="text-3xl font-bold mb-12">
-      Todo lo que necesitas para lanzar rápido
-    </h2>
-
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="font-bold mb-2">Deploy instantáneo</h3>
-        <p class="text-gray-600">
-          Publica tu proyecto con un solo clic.
-        </p>
-      </div>
-
-      <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="font-bold mb-2">APIs listas</h3>
-        <p class="text-gray-600">
-          Autenticación, base de datos y servicios integrados.
-        </p>
-      </div>
-
-      <div class="p-6 bg-white rounded-xl shadow">
-        <h3 class="font-bold mb-2">Dashboard simple</h3>
-        <p class="text-gray-600">
-          Administra tus proyectos fácilmente.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- Call To Action principal -->
-  <section id="cta" class="mt-28 text-center">
-
-    <h2 class="text-4xl font-bold mb-6">
-      Empieza a construir hoy
-    </h2>
-
-    <p class="text-gray-600 mb-8 max-w-lg mx-auto">
-      Crea tu cuenta y lanza tu primer proyecto en minutos con DevLaunch.
-    </p>
-
-    <button class="bg-black text-white px-10 py-4 rounded-xl hover:scale-105 transition shadow-lg">
-      Crear cuenta gratis
-    </button>
-
-  </section>
-
-</Layout>
+<Layout title="DevLaunch — Una web clara para tu negocio"><Hero/><div class="principles wrap"><span>CLARIDAD ANTES QUE RUIDO.</span><div><span>Contenido con intención</span><i>✳</i><span>Diseño para cualquier pantalla</span><i>✳</i><span>Acciones que funcionan</span></div></div><section id="servicios" class="section wrap" aria-labelledby="services-title"><div class="section-heading"><div><p class="eyebrow">01 / QUÉ HACEMOS</p><h2 id="services-title">La web que tu idea necesita.</h2></div><p>El punto de partida depende de lo que quieres comunicar y de lo que tu visitante necesita hacer.</p></div><div class="services">{services.map(service=><article class="service"><span class="service-number">{service.number} ↗</span><p class="eyebrow">{service.type}</p><h3>{service.name}</h3><p>{service.description}</p><ul>{service.tags.map(tag=><li>{tag}</li>)}</ul></article>)}</div></section><section id="proceso" class="process-section"><div class="section wrap"><div class="section-heading"><div><p class="eyebrow">02 / EL PROCESO</p><h2>De una conversación<br/>a una web con dirección.</h2></div><p>Primero entendemos el negocio. Después damos forma a la experiencia y revisamos cómo funciona.</p></div><ol class="process-list"><li><span>01</span><div><h3>Entender y enfocar</h3><p>Definimos el objetivo, la audiencia y el contenido disponible. Acordamos qué debe resolver el sitio.</p></div><small>ENTREGABLE / BRIEF</small></li><li><span>02</span><div><h3>Diseñar y construir</h3><p>Organizamos el contenido, damos forma a la interfaz y adaptamos el sitio a distintas pantallas.</p></div><small>ENTREGABLE / VISTA PREVIA</small></li><li><span>03</span><div><h3>Revisar y publicar</h3><p>Probamos la navegación, los enlaces y los formularios. Ajustamos el contenido antes de compartir el sitio.</p></div><small>ENTREGABLE / SITIO WEB</small></li></ol></div></section><section id="brief" class="section wrap brief-section" aria-labelledby="brief-title"><div class="brief-intro"><p class="eyebrow">03 / TU SIGUIENTE PASO</p><h2 id="brief-title">Empecemos por<br/>una buena pregunta.</h2><p>¿Qué necesitas que tu sitio haga por tu negocio? Arma un brief con lo esencial y descárgalo para tu primera conversación.</p><div class="brief-tip"><span>↗</span><p>Este configurador crea un documento en tu dispositivo. Puedes revisarlo y compartirlo cuando quieras.</p></div></div><div class="brief-card"><form id="brief-form"><label for="business">Nombre de tu negocio o proyecto</label><input id="business" name="business" maxlength="100" placeholder="Ej. Estudio Norte" required/><div class="form-row"><div><label for="site-type">Qué quieres construir</label><select id="site-type" name="type"><option>Landing page</option><option>Sitio de negocio</option><option>Portafolio</option></select></div><div><label for="goal">Objetivo principal</label><select id="goal" name="goal"><option>Recibir consultas</option><option>Presentar un servicio</option><option>Mostrar mi trabajo</option></select></div></div><label for="message">Qué te gustaría contar</label><textarea id="message" name="message" rows="3" maxlength="2000" placeholder="Tu audiencia, tus servicios y lo que ya tienes preparado…"></textarea><div class="brief-preview"><p class="eyebrow">TU PUNTO DE PARTIDA</p><p id="brief-preview-text">Una landing page para recibir consultas.</p></div><div class="form-actions"><button class="button primary" type="submit">Descargar mi brief <span>↓</span></button><button class="reset-button" type="reset">Empezar de nuevo</button></div><p id="brief-status" class="form-status" role="status" aria-live="polite"></p></form></div></section><section class="section wrap faq" aria-labelledby="faq-title"><div><p class="eyebrow">ANTES DE EMPEZAR</p><h2 id="faq-title">Dudas frecuentes.</h2></div><div><details><summary>¿Qué necesito tener preparado?<span>+</span></summary><p>Una idea del objetivo, información de tu negocio y cualquier referencia visual o contenido que ya tengas. El brief te ayuda a ordenar ese punto de partida.</p></details><details><summary>¿Cuánto tarda un proyecto?<span>+</span></summary><p>Depende de su alcance y del contenido disponible. La primera conversación sirve para acordar entregables y un calendario que se pueda cumplir.</p></details><details><summary>¿Este sitio es un servicio en operación?<span>+</span></summary><p>DevLaunch es un concepto de estudio web creado como proyecto de portafolio. El configurador funciona y genera un brief descargable; no realiza contrataciones ni envía formularios.</p></details></div></section></Layout>
+<script>
+const form = document.querySelector<HTMLFormElement>('#brief-form')!;
+const business = document.querySelector<HTMLInputElement>('#business')!;
+const type = document.querySelector<HTMLSelectElement>('#site-type')!;
+const goal = document.querySelector<HTMLSelectElement>('#goal')!;
+const message = document.querySelector<HTMLTextAreaElement>('#message')!;
+const preview = document.querySelector<HTMLElement>('#brief-preview-text')!;
+const status = document.querySelector<HTMLElement>('#brief-status')!;
+function updatePreview() { preview.textContent = `${business.value.trim() || 'Tu proyecto'}: ${type.value.toLowerCase()} para ${goal.value.toLowerCase()}.`; status.textContent=''; }
+form.addEventListener('input',updatePreview);
+form.addEventListener('reset',()=>{requestAnimationFrame(updatePreview);});
+form.addEventListener('submit',event=>{event.preventDefault();if(!business.value.trim()){business.setCustomValidity('Escribe el nombre de tu proyecto.');business.reportValidity();return;}business.setCustomValidity('');const brief=`BRIEF DE PROYECTO WEB\n\nProyecto: ${business.value.trim()}\nTipo de sitio: ${type.value}\nObjetivo: ${goal.value}\n\nContexto:\n${message.value.trim() || 'Por definir en la primera conversación.'}\n\nPor acordar: audiencia, secciones, contenido, entregables y calendario.\n\nGenerado con el configurador de DevLaunch, proyecto de portafolio.`;const url=URL.createObjectURL(new Blob([brief],{type:'text/plain;charset=utf-8'}));const link=document.createElement('a');link.href=url;link.download='brief-proyecto-web.txt';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status.textContent='Brief descargado. Ya puedes revisarlo y compartirlo.';});
+business.addEventListener('input',()=>business.setCustomValidity(''));
+</script>
